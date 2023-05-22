@@ -1,5 +1,8 @@
 package holiday;
 
-public interface HolidayRepository {
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface HolidayRepository extends CrudRepository<Holiday, Long> {
 
 }
