@@ -16,32 +16,29 @@ public class FamilyMember {
 	
 	public FamilyMember(long id, String firstName, String secondName, Date bDay) {
 		
+	this.id = id;
+	this.firstName = firstName;
+	this.secondName = secondName;
+	this.bDay = bDay;
+		
 	}
 
-	/**
-	 * @return the id
-	 */
+	//@return the id
 	public long getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
+	//@param id the id to set
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the firstName
-	 */
+	//@return the firstName
 	public String getFirstName() {
 		return firstName;
 	}
 
-	/**
-	 * @param firstName the firstName to set
-	 */
+	//@param firstName the firstName to set
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
