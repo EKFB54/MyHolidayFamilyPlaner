@@ -2,7 +2,7 @@ package family;
 
 import java.sql.Date;
 
-public class FamilyMember {
+public class FamilyMember {//test
 	
 	private long id; 
 	private String firstName;
