@@ -6,7 +6,7 @@ public class FamilyMember {
 	
 	private long id; 
 	private String firstName;
-	private String secondName;
+	private String secondName; //test
 	private Date bDay;
 	
 
