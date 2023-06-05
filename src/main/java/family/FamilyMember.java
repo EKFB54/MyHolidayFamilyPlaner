@@ -7,7 +7,7 @@ public class FamilyMember {
 	private long id; 
 	private String firstName;
 	private String secondName; //test
-	private Date bDay;
+	private Date bDay; // test2 
 	
 
 	public FamilyMember() {
