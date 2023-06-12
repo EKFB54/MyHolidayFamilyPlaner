@@ -2,12 +2,12 @@ package family;
 
 import java.sql.Date;
 
-public class FamilyMember {//test
+public class FamilyMember {
 	
 	private long id; 
 	private String firstName;
-	private String secondName; //test
-	private Date bDay; // test2 
+	private String secondName; 
+	private Date bDay;
 	
 
 	public FamilyMember() {
