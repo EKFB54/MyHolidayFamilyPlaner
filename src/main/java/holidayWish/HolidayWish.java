@@ -10,7 +10,7 @@ import holiday.Holiday;
 public class HolidayWish {
 
 	@Id
-	private long iDHolidayWisch; 
+	private long iDHolidayWish; 
 	private String ort;
 	private String land; 
 	private double preis;
@@ -26,10 +26,10 @@ public class HolidayWish {
 	}
 
 
-	public HolidayWish(long iDHolidayWisch, String ort, String land, double preis, Date ab, Date bis, 
+	public HolidayWish(long iDHolidayWish, String ort, String land, double preis, Date ab, Date bis, 
 			Holiday holiday) {
 		super();
-		this.iDHolidayWisch = iDHolidayWisch;
+		this.iDHolidayWish = iDHolidayWish;
 		this.ort = ort;
 		this.land = land;
 		this.preis = preis;
@@ -55,16 +55,16 @@ public class HolidayWish {
 	/**
 	 * @return the iDHolidayWisch
 	 */
-	public long getiDHolidayWisch() {
-		return iDHolidayWisch;
+	public long getiDHolidayWish() {
+		return iDHolidayWish;
 	}
 
 
 	/**
-	 * @param iDHolidayWisch the iDHolidayWisch to set
+	 * @param iDHolidayWish the iDHolidayWish to set
 	 */
-	public void setiDHolidayWisch(long iDHolidayWisch) {
-		this.iDHolidayWisch = iDHolidayWisch;
+	public void setiDHolidayWish(long iDHolidayWisch) {
+		this.iDHolidayWish = iDHolidayWisch;
 	}
 
 
