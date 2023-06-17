@@ -1,11 +1,17 @@
 package holidayWish;
 
 import java.sql.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
+import prio.Prio;
 import holiday.Holiday;
 
 @Entity
@@ -20,6 +26,13 @@ public class HolidayWish {
 	private Date ab; 
 	private Date bis;
 	private Holiday holiday; 
+	
+	@OneToMany(mappedBy = "holidayWish")
+	@JsonIgnore
+	private List<Prio> priorities;
+
+	@Transient
+	private int sumPriority;
 
 
 
@@ -40,12 +53,23 @@ public class HolidayWish {
 		this.bis = bis;
 		this.holiday=holiday;
 	}
+	public List<Prio> getPriorities() {
+		return priorities;
+	}
+
+	public void setPriorities(List<Prio> priorities) {
+		this.priorities = priorities;
+	}
 	
 	/**
 	 * @return the holiday
 	 */
 	public Holiday getHoliday() {
 		return holiday;
+	}
+
+	public void setSumPriority(int sumPriority) {
+		this.sumPriority = sumPriority;
 	}
 
 	/**
@@ -149,5 +173,7 @@ public class HolidayWish {
 	public void setBis(Date bis) {
 		this.bis = bis;
 	}
+	
+	
 
 }

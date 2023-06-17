@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 	
-	@RequestMapping("/hi")
+	/*@RequestMapping("/hi")
 	public String sayHello() {
 		
 		return "Guten tag!";
@@ -22,7 +22,7 @@ public class TestController {
 	@RequestMapping("/goodnight")
 	public String sayGoodNight() {
 		return "Schlaf gut";
-	}
+	}*/
 	
 
 }

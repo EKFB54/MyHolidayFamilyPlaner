@@ -1,11 +1,15 @@
 package holiday;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import holidayWish.HolidayWish;
 
 
 @Entity
@@ -17,7 +21,10 @@ public class Holiday {
 	private String land; 
 	private double preis;
 	private Date ab; 
-	private Date bis; 
+	private Date bis;
+	
+	@OneToMany(mappedBy = "holiday")
+	public List<HolidayWish> wishes;
 	
 	public Holiday() {
 		// TODO Auto-generated constructor stub
@@ -107,6 +114,13 @@ public class Holiday {
 	 */
 	public void setBis(Date bis) {
 		this.bis = bis;
+	}
+	public List<HolidayWish> getWishes() {
+		return wishes;
+	}
+
+	public void setWishes(List<HolidayWish> wishes) {
+		this.wishes = wishes;
 	}
 
 }
