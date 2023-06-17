@@ -2,8 +2,16 @@ package holiday;
 
 import java.sql.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class Holiday {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private long urlaubID; 
 	private String ort;
 	private String land; 

@@ -3,6 +3,8 @@ package holidayWish;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import holiday.Holiday;
 
@@ -10,6 +12,7 @@ import holiday.Holiday;
 public class HolidayWish {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private long iDHolidayWish; 
 	private String ort;
 	private String land; 
