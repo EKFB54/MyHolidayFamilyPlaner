@@ -1,5 +1,7 @@
 package holidayWish;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +11,8 @@ public class HolidayWishService {
 	@Autowired
 	private HolidayWishRepository holidayWishRepository;
 
-	public HolidayWishService() {
-		// TODO Auto-generated constructor stub
+	public List<HolidayWish> getHolidayWishList() {
+		return holidayWishRepository.findAll();
 	}
 
 	public HolidayWish getHolidayWish(Long id) {
@@ -28,5 +30,13 @@ public class HolidayWishService {
 
 	public void deleteHolidayWish(Long id) {
 		holidayWishRepository.deleteById(id);
+	}
+
+	public HolidayWishRepository getHolidayWishRepository() {
+		return holidayWishRepository;
+	}
+
+	public void setHolidayWishRepository(HolidayWishRepository holidayWishRepository) {
+		this.holidayWishRepository = holidayWishRepository;
 	}
 }
