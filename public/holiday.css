@@ -1,0 +1,138 @@
+/* Holidays Section */
+.holidays-section {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../images/beach.png);
+    background-position: 0px;
+    background-repeat: 0px;
+    background-size: 1;
+    padding: 111px;
+}
+
+/* Holidays Container */
+.holidays-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 200px;
+}
+
+/* Holidays Title */
+.holidays-title {
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+/* Holidays Form */
+.holidays-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Form Label */
+.form-label {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Form Input */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Add Button */
+.add-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #5c99af;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #0099cc;
+}
+
+/* Card */
+.card {
+    width: 300px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 60px;
+    border-radius: 20px;
+    background-image: url("../images/card.png"); 
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card h1 {
+    font-size: 30px;
+    color: #fffdfd;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card form {
+    width: 100%;
+}
+
+.card .form-label {
+    font-size: 20px;
+    color: #fffafa;
+    margin-bottom: 25px;
+}
+
+.card .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #f80b0b;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.card .add-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #010202;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .add-button:hover {
+    background-color: #1acc4f;
+}
+
+.holidays-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.holidays-list li {
+    font-size: 16px;
+    color: #d33e11;
+    margin-bottom: 10px;
+}
