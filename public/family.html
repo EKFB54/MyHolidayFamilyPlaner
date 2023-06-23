@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HolidayPlanner</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/family.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="./images/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav class="navigation">
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html">HOME</a></li>
+                <li class="nav-item active"><a href="family.html">FAMILY</a></li>
+                <li class="nav-item"><a href="holiday.html">HOLIDAY</a></li>
+                <li class="nav-item"><a href="priorities.html">PRIORITIES</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="family-section">
+        <div class="family-container">
+            <div class="card">
+                <h1 class="family-title">Add Family Member</h1>
+                <form id="createFamily" class="family-form">
+                    <label for="nameTag" class="form-label">Name:</label>
+                    <input type="text" id="nameTag" required class="form-input">
+                    <label for="bdayTag" class="form-label">Birthday:</label>
+                    <input type="date" id="bdayTag" required class="form-input">
+                    <button type="submit" class="add-button">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        WI &copy; 2023 HS AALEN
+    </footer>
+</body>
+
+</html>
