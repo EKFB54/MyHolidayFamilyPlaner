@@ -1,10 +1,13 @@
 package project.family.prio;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 
@@ -19,11 +22,12 @@ public class Prio {
 	private Long id;
 
 	@ManyToOne
-	@JoinColumn(name = "family_member_id", referencedColumnName = "id")
+	@JoinColumn(name = "familymember_id", referencedColumnName = "id")
 	private FamilyMember familyMember;
+	//private List<FamilyMember> familymember;
 
 	@ManyToOne
-	@JoinColumn(name = "holiday_wish_id", referencedColumnName = "urlaubID")
+	@JoinColumn(name = "holiday_wish_id", referencedColumnName = "id")
 	private HolidayWish holidayWish;
 
 	private int priority;

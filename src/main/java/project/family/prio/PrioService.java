@@ -20,7 +20,7 @@ public class PrioService {
 
 	public void addPrio(Prio prio) {
 		Prio foundEntry = prioRepository.findByFamilyMemberIdAndHolidayWishId(prio.getFamilyMember().getId(),
-				prio.getHolidayWish().getiDHolidayWish());
+				prio.getHolidayWish().getId());
 
 		if (foundEntry != null) {
 			foundEntry.setPriority(prio.getPriority());

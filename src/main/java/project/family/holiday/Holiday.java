@@ -2,7 +2,6 @@ package project.family.holiday;
 
 import java.sql.Date;
 import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -12,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.OneToMany;
 
 import project.family.holidaywish.*;
+import project.family.familymember.*;
 
 
 @Entity
@@ -28,8 +28,8 @@ public class Holiday {
 	@OneToMany(mappedBy = "holiday")
 	public List<HolidayWish> wishes;
 	
+	
 	public Holiday() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Holiday(long urlaubID, String ort, String land, double preis, Date ab, Date bis) {

@@ -9,11 +9,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 
 
 import project.family.prio.Prio;
+import project.family.familymember.FamilyMember;
 import project.family.holiday.Holiday;
 
 @Entity
@@ -21,17 +24,25 @@ public class HolidayWish {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
-	private long iDHolidayWish; 
+	private long id; 
 	private String ort;
 	private String land; 
 	private double preis;
 	private Date ab; 
 	private Date bis;
-	private Holiday holiday; 
+	//private Holiday holiday; 
+	
+	@ManyToOne
+	@JoinColumn(name = "urlaub_ID", referencedColumnName = "urlaubID")
+	private Holiday holiday;
 	
 	@OneToMany(mappedBy = "holidayWish")
 	@JsonIgnore
 	private List<Prio> priorities;
+	
+	@ManyToOne
+	@JoinColumn(name = "familymember_id", referencedColumnName = "id")
+	private FamilyMember familyMember;
 
 	@Transient
 	private int sumPriority;
@@ -44,16 +55,16 @@ public class HolidayWish {
 	}
 
 
-	public HolidayWish(long iDHolidayWish, String ort, String land, double preis, Date ab, Date bis, 
+	public HolidayWish(long id, String ort, String land, double preis, Date ab, Date bis, 
 			Holiday holiday) {
 		super();
-		this.iDHolidayWish = iDHolidayWish;
+		this.id = id;
 		this.ort = ort;
 		this.land = land;
 		this.preis = preis;
 		this.ab = ab;
 		this.bis = bis;
-		this.holiday=holiday;
+		//this.holiday=holiday;
 	}
 	public List<Prio> getPriorities() {
 		return priorities;
@@ -84,16 +95,16 @@ public class HolidayWish {
 	/**
 	 * @return the iDHolidayWisch
 	 */
-	public long getiDHolidayWish() {
-		return iDHolidayWish;
+	public long getId() {
+		return id;
 	}
 
 
 	/**
 	 * @param iDHolidayWish the iDHolidayWish to set
 	 */
-	public void setiDHolidayWish(long iDHolidayWisch) {
-		this.iDHolidayWish = iDHolidayWisch;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 

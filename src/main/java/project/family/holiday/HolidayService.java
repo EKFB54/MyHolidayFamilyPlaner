@@ -17,7 +17,7 @@ public class HolidayService {
 	@Autowired
 	private HolidayWishRepository holidayWishRepository;
 
-	public List<Holiday> getHolidayList() {
+	/*public List<Holiday> getHolidayList() {
 		List<Holiday> holidays = holidayRepository.findall();
 		for (Holiday holiday : holidays) {
 			for (HolidayWish wish : holiday.getWishes()) {
@@ -25,7 +25,7 @@ public class HolidayService {
 			}
 		}
 		return holidays;
-	}
+	}*/
 
 	public Holiday getHoliday(Long id) {
 		Holiday holiday = holidayRepository.findById(id).orElse(null);
@@ -39,14 +39,14 @@ public class HolidayService {
 		return holiday;
 	}
 
-	public HolidayWish saveHolidayWishById(Long holidayId, HolidayWish holidayWish) {
+	/*public HolidayWish saveHolidayWishById(Long holidayId, HolidayWish holidayWish) {
 		Holiday holiday = holidayRepository.findById(holidayId).orElse(null);
 		if (holiday != null) {
 			holidayWish.setHoliday(holiday);
 			return holidayWishRepository.save(holidayWish);
 		}
 		throw new RuntimeException();
-	}
+	}*/
 
 	public Holiday addHoliday(Holiday holiday) {
 	   return holidayRepository.save(holiday);

@@ -2,8 +2,12 @@ package project.family.familymember;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+
+//import fh.aalen.video.Video;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,10 @@ public class FamilyMemberController {
 	@RequestMapping("/familymember/{id}")
 	public FamilyMember getFamilyMember(Long id) {
 		return familyMemberService.getFamilyMember(id);
+	}
+	@RequestMapping(method = RequestMethod.POST, value = "/familymember")
+	public void addVideo(@RequestBody FamilyMember video) {
+		familyMemberService.addFamilyMember(video);
 	}
 	@RequestMapping(method = RequestMethod.PUT, value = "/familymember/{id}")
 	public void updateFamilymember(@PathVariable Long id, @RequestBody FamilyMember familyMember) {

@@ -8,6 +8,6 @@ public interface PrioRepository extends CrudRepository<Prio, Long> {
 
 	List<Prio> findAll();
 
-	Prio findByFamilyMemberIdAndHolidayWishId(Long familyMemberId, Long holidayWishId);
+	Prio findByFamilyMemberIdAndHolidayWishId(Long familyMemberId, Long iDHolidayWish);
 
 }

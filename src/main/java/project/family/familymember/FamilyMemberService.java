@@ -22,6 +22,9 @@ public class FamilyMemberService {
 	public FamilyMember getFamilyMember(Long id) {
 		return familyMemberRepository.findById(id).orElse(null);
 	}
+	public void addFamilyMember(FamilyMember familymember) {
+		familyMemberRepository.save(familymember);
+	}
 	public void updateFamilyMember(Long id, FamilyMember familyMember) {
 		familyMemberRepository.save(familyMember);
 	}
