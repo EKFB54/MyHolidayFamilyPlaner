@@ -2,14 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("./images/beach2.png");
+    background-image: url("../images/beach2.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(250, 250, 250, 0), rgba(51, 204, 133, 0)), url(../images/beach2.png);
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 100px;
 }
 
 .container {
