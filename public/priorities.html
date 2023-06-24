@@ -4,6 +4,8 @@
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/priorities.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/prio.js"></script>
 </head>
 <body>
     <header class="header">
@@ -23,29 +25,25 @@
     <div class="container">
         <div class="card" id="family-card">
             <h2 style="font-family: Arial, sans-serif; color: rgb(235, 235, 235);">Add Family Member</h2>
-            <button>Choice</button>
-            <input class="input" name="text" type="text" required="">
-            <label class="textUser">Click Here</label>
+            <select id="familyCardDropdown"></select>
         </div>
     
         <div class="card" id="holiday-card">
             <h2 style="font-family: Arial, sans-serif; color: rgb(238, 232, 232);">Add your Holiday</h2>
-            <button>Choice</button>
-            <input class="input input-alt" placeholder="Type here" required="" type="text">
-  <span class="input-border input-border-alt"></span>
+            <select id="holidayCardDropdown"></select>
         </div>
     
         <div class="card" id="priority-card">
             <h2 style="font-family: Arial, sans-serif; color: rgb(241, 244, 245);">Priority</h2>
-            <input type="range" class="slider" min="0" max="10" value="5" oninput="updatePriorityValue()">
-            <p class="priority-value">?</p>
+            <input type="range" class="slider" min="1" max="10" value="1" oninput="updatePriorityValue(this.value)">
+            <p id="priority-value">1</p>
+            <button onclick="savePrio()">Save</button>
         </div>
     
         <div class="card" id="top5-card">
             <h2 style="font-family: Arial, sans-serif; color: rgb(248, 247, 245);">Top 5</h2>
-            <button>Choice</button>
             <input class="input input-alt" placeholder="Type here" required="" type="text">
-  <span class="input-border input-border-alt"></span>
+            <span class="input-border input-border-alt"></span>
         </div>
     </div>
     
@@ -57,7 +55,5 @@
         WI &copy; 2023 HS AALEN
         <a href="kontakt.html" class="ko">Kontakt</a>
     </footer>
-
-    <script src="./js/priorities.js"></script>
 </body>
 </html>
