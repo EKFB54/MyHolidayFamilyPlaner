@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/priorities.css">
 </head>
-
 <body>
     <header class="header">
         <div class="logo-container">
@@ -17,10 +16,39 @@
                 <li class="nav-item"><a href="family.html">FAMILY</a></li>
                 <li class="nav-item"><a href="holiday.html">HOLIDAY</a></li>
                 <li class="nav-item active"><a href="priorities.html">PRIORITIES</a></li>
+            </ul>
         </nav>
+    </header>
+
+    <div class="container">
+        <div class="card" id="family-card">
+            <h2>Add Family Member</h2>
+            <button class="choice-button" onclick="toggleInput('family-input')">Choice</button>
+            <input type="text" class="input-field" id="family-input">
+        </div>
+
+        <div class="card" id="holiday-card">
+            <h2>Add your Holiday</h2>
+            <button class="choice-button" onclick="toggleInput('holiday-input')">Choice</button>
+            <input type="text" class="input-field" id="holiday-input">
+        </div>
+
+        <div class="card" id="priority-card">
+            <h2>Priority</h2>
+            <input type="range" class="slider" min="0" max="10" value="5" oninput="updatePriorityValue()">
+            <p class="priority-value">?</p>
+        </div>
+
+        <div class="card" id="top5-card">
+            <h2>Top 5</h2>
+            <input type="text" class="input-field" id="top5-input">
+        </div>
+    </div>
+
     <footer class="footer">
         WI &copy; 2023 HS AALEN
     </footer>
-</body>
 
+    <script src="./js/priorities.js"></script>
+</body>
 </html>
