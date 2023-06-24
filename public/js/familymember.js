@@ -18,15 +18,14 @@ $(document).ready(function() {
       type: 'POST',
       data: JSON.stringify(familyMember),
       contentType: 'application/json',
-      success: function(response) {
+      success: function(jqXhr, textStatus, errorThrown) {
         
-        console.log('Familienmitglied erfolgreich hinzugefügt:', response);
-
+       
         
       },
-      error: function(error) {
-        
-        console.error('Fehler beim Hinzufügen des Familienmitglieds:', error);
+      error: function(jqXhr, textStatus, errorThrown) {
+       
+      	console.log(errorThrown);
       }
     });
 

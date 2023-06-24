@@ -5,6 +5,9 @@
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/holiday.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/holiday.js"></script>
+    
 </head>
 
 <body>
@@ -26,23 +29,21 @@
             <div class="card">
                 <h1 class="holidays-title">Add your Holiday</h1>
                 <form id="createHoliday" class="holidays-form">
-                    <label for="destinationTag" class="form-label">Travel Destination:</label>
-                    <input type="text" id="destinationTag" required class="form-input">
+              
+                    <label for="ort" class="form-label">Location:</label>
+                    <input type="text" id="ort" required class="form-input">
                     
-                    <label for="locationTag" class="form-label">Location:</label>
-                    <input type="text" id="locationTag" required class="form-input">
+                    <label for="land" class="form-label">Country:</label>
+                    <input type="text" id="land" required class="form-input">
                     
-                    <label for="countryTag" class="form-label">Country:</label>
-                    <input type="text" id="countryTag" required class="form-input">
+                    <label for="preis" class="form-label">Price:</label>
+                    <input type="double" id="preis" required class="form-input">
                     
-                    <label for="priceTag" class="form-label">Price:</label>
-                    <input type="text" id="priceTag" required class="form-input">
+                    <label for="ab" class="form-label">From:</label>
+                    <input type="date" id="ab" required class="form-input">
                     
-                    <label for="fromTag" class="form-label">From:</label>
-                    <input type="date" id="fromTag" required class="form-input">
-                    
-                    <label for="toTag" class="form-label">To:</label>
-                    <input type="date" id="toTag" required class="form-input">
+                    <label for="bis" class="form-label">To:</label>
+                    <input type="date" id="bis" required class="form-input">
                     
                     <button type="submit" class="add-button">Add</button>
                 </form>
@@ -55,3 +56,5 @@
 </body>
 
 </html>
+
+
