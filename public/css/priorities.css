@@ -81,15 +81,6 @@ button:active {
   transition: border 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
-.textUser {
-  position: absolute;
-  left: 15px;
-  color: #d8d4d4;
-  pointer-events: none;
-  transform: translateY(1rem);
-  transition: 150ms cubic-bezier(0.4,0,0.2,1);
-}
-
 .input:focus, input:valid {
   outline: none;
   box-shadow: 1px 2px 5px rgba(133, 133, 133, 0.523);
@@ -125,6 +116,5 @@ button:active {
     z-index: 2;
     color: #fff;
 }
-
 
 
