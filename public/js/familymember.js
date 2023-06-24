@@ -12,23 +12,36 @@ $(document).ready(function() {
       bDay: bDay
     };
 
-    
     $.ajax({
       url: 'http://localhost:8080/familymember',
       type: 'POST',
       data: JSON.stringify(familyMember),
       contentType: 'application/json',
       success: function(jqXhr, textStatus, errorThrown) {
-        
-       
-        
       },
       error: function(jqXhr, textStatus, errorThrown) {
-       
-      	console.log(errorThrown);
+        console.log(errorThrown);
       }
     });
 
     $('#createFamily')[0].reset();
+  });
+
+  // Add event listener for each delete button
+  $('.delete-button').each(function() {
+    $(this).click(function() {
+      var memberId = $(this).attr('id');
+
+      $.ajax({
+        url: 'http://localhost:8080/familymember/' + memberId,
+        type: 'DELETE',
+        success: function(jqXhr, textStatus, errorThrown) {
+          console.log('Successfully deleted family member');
+        },
+        error: function(jqXhr, textStatus, errorThrown) {
+          console.log(errorThrown);
+        }
+      });
+    });
   });
 });
