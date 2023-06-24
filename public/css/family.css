@@ -4,20 +4,34 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 135px;
+}
+
+/* Family Members Section */
+.family-members-section {
+    padding: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
 }
 
 /* Family Container */
 .family-container {
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     text-align: center;
-    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
 /* Family Title */
 .family-title {
-    font-size: 35px;
+    font-size: 1.5rem;
     color: #fff;
     margin-bottom: 20px;
 }
@@ -32,7 +46,7 @@
 
 /* Form Label */
 .form-label {
-    font-size: 20px;
+    font-size: 1rem;
     color: #fff;
     margin-bottom: 10px;
 }
@@ -47,8 +61,15 @@
     margin-bottom: 20px;
 }
 
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 /* Add Button */
-.add-button {
+.add-button, .update-button, .select-button {
     padding: 10px 20px;
     font-size: 18px;
     background-color: #5c99af;
@@ -57,60 +78,50 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-.add-button:hover {
+.add-button:hover, .update-button:hover, .select-button:hover {
     background-color: #0099cc;
+}
+
+/* Delete Button */
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Table */
+#familyMembersList {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#familyMembersList th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #ffffff47;
+    color: white;
+}
+
+#familyMembersList td, #familyMembersList tr:nth-child(even) {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
 /* Card */
 .card {
-    width: 300px;
-    height: 350px;
-    border-radius: 0.75rem;
     background-color: rgba(17, 24, 39, 1);
-    padding: 3rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
     color: rgba(243, 244, 246, 1);
-    margin: 0 auto; /* HinzugefÃ¼gte Zeile */
-  }
-  
-
-.card h1 {
-    font-size: 28px;
-    color: #f8f8f8;
-    margin-bottom: 20px;
-}
-
-.card form {
-    width: 100%;
-}
-
-.card .form-label {
-    font-size: 20px;
-    color: #ece4e4;
-    margin-bottom: 10px;
-}
-
-.card .form-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #f7eded;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
-.card .add-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #11b2ec;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card .add-button:hover {
-    background-color: #0099cc;
+    margin: 0 auto;
 }
