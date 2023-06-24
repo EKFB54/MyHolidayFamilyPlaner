@@ -16,10 +16,10 @@ public class HolidayController {
 	@Autowired
 	HolidayService holidayservice;
 
-	/*@RequestMapping("/holiday")
+	@RequestMapping("/holiday")
 	public List<Holiday> getHolidayList() {
 		return holidayservice.getHolidayList();
-	}*/
+	}
 
 	@RequestMapping("/holiday/{id}")
 	public Holiday getHoliday(@PathVariable Long id) {
@@ -36,16 +36,16 @@ public class HolidayController {
 		holidayservice.updateHoliday(id, holiday);
 	}
 
-	/*@RequestMapping(method = RequestMethod.POST, value = "/holiday/{id}/holiday-wish")
+	@RequestMapping(method = RequestMethod.POST, value = "/holiday/{id}/holiday-wish")
 	public HolidayWish saveHolidayWishById(@PathVariable Long id, @RequestBody HolidayWish holidayWish) {
 		return holidayservice.saveHolidayWishById(id, holidayWish);
-	}*/
+	}
 	
-	/*@RequestMapping(method = RequestMethod.PUT, value = "/holiday/{id}/holiday-wish/{holidayWishId}")
+	@RequestMapping(method = RequestMethod.PUT, value = "/holiday/{id}/holiday-wish/{holidayWishId}")
 	public void updateHolidaywish(@PathVariable Long id, @PathVariable Long holidayWishId, @RequestBody HolidayWish holidayWish) {
 		holidayWish.setId(holidayWishId);
 		holidayservice.saveHolidayWishById(id, holidayWish);
-	}*/
+	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/holiday/{id}")
 	public void deleteHoliday(@PathVariable Long id) {

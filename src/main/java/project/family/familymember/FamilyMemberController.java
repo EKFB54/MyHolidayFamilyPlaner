@@ -29,8 +29,8 @@ public class FamilyMemberController {
 		return familyMemberService.getFamilyMember(id);
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/familymember")
-	public void addVideo(@RequestBody FamilyMember video) {
-		familyMemberService.addFamilyMember(video);
+	public void addFamilyMember(@RequestBody FamilyMember familyMember) {
+		familyMemberService.addFamilyMember(familyMember);
 	}
 	@RequestMapping(method = RequestMethod.PUT, value = "/familymember/{id}")
 	public void updateFamilymember(@PathVariable Long id, @RequestBody FamilyMember familyMember) {

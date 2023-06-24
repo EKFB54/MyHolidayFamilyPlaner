@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface HolidayRepository extends CrudRepository<Holiday, Long> {
-	//@Query
-	//List<Holiday> findall();
+
+	List<Holiday> findAll();
 }
