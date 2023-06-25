@@ -5,6 +5,7 @@
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/family.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/familymember.js"></script>
@@ -29,6 +30,8 @@
             <div class="card">
                 <h1 class="family-title">Add Family Member</h1>
                 <form id="createFamily" class="family-form">
+					 <label for="ID" class="form-label">ID:</label>
+                    <input type="text" id="ID" required class="form-input">
                     <label for="firstName" class="form-label">Firstname:</label>
                     <input type="text" id="firstName" required class="form-input">
                     <label for="secondName" class="form-label">Secondname:</label>
@@ -37,26 +40,22 @@
                     <input type="date" id="bDay" required class="form-input">
                     <div class="button-container">
                         <button type="submit" class="add-button">Add</button>
-                        <button type="button" id="selectButton" class="select-button">Select</button>
                         <button type="button" id="updateButton" class="update-button">Update</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
-    <div class="family-members-section">
         <div class="family-container">
             <div class="card">
                 <h1 class="family-title">Family Members</h1>
                 <table id="familyMembersList">
                     <thead>
                         <tr>
-                            
-                                <td>Firstname</td>
-                                <td>Lastname</td>
-                                <td>Birthday</td>
-                                <td><button id="1" class="delete-button"><img src="images/delete.png" alt="Delete"></button></td>
-                            
+                            <th>ID</th>
+                            <th>Firstname</th>
+                            <th>Secondname</th>
+                            <th>Birthday</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,10 +63,12 @@
                     </tbody>
                 </table>
             </div>
+            <a href="holiday.html" class="btn2"><span>NEXT</span></a>
         </div>
     </div>
     <footer class="footer">
         WI &copy; 2023 HS AALEN
+        <a href="contact.html" class="ko">Contact</a>
     </footer>
 </body>
 
