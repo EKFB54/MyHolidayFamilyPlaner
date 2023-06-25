@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/holiday.css">
+    <link rel="stylesheet" href="./css/family.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/holiday.js"></script>
-    
 </head>
+
 <body>
     <header class="header">
         <div class="logo-container">
@@ -22,35 +25,55 @@
             </ul>
         </nav>
     </header>
-    <div class="holidays-section">
-        <div class="holidays-container">
+    <div class="family-section">
+        <div class="family-container">
             <div class="card">
-                <h1 class="holidays-title">Add your Holiday</h1>
-                <form id="createHoliday" class="holidays-form">
-
-                    <label for="ort" class="form-label">Location:</label>
-                    <input type="text" id="ort" required class="form-input">  
-                    
-                    <label for="land" class="form-label">Country:</label>
+                <h1 class="family-title">Add Holiday</h1>
+                <form id="createHoliday" class="family-form">
+                    <label for="urlaubID" class="form-label">Holiday ID:</label>
+                    <input type="text" id="urlaubID" required class="form-input">
+                    <label for="ort" class="form-label">Ort:</label>
+                    <input type="text" id="ort" required class="form-input">
+                    <label for="land" class="form-label">Land:</label>
                     <input type="text" id="land" required class="form-input">
-                    
-                    <label for="preis" class="form-label">Price:</label>
-                    <input type="double" id="preis" required class="form-input">
-                    
-                    <label for="ab" class="form-label">From:</label>
-                    <input type="date" id="ab" required class="form-input">
-                    
-                    <label for="bis" class="form-label">To:</label>
-                    <input type="date" id="bis" required class="form-input">
-                    
-                    <button type="submit" class="add-button">Add</button>
+                    <label for="preis" class="form-label">Preis:</label>
+                    <input type="text" id="preis" required class="form-input">
+                    <label for="ab" class="form-label">Ab:</label>
+                    <input type="text" id="ab" required class="form-input">
+                    <label for="bis" class="form-label">Bis:</label>
+                    <input type="text" id="bis" required class="form-input">
+                    <div class="button-container">
+                        <button type="submit" class="add-button">Add</button>
+                        <button type="button" id="updateButton" class="update-button">Update</button>
+                    </div>
                 </form>
             </div>
-        </div>    
+        </div>
+        <div class="family-container">
+            <div class="card">
+                <h1 class="family-title">Holiday Selection</h1>
+                <table id="holidaySelectionList">
+                    <thead>
+                        <tr>
+                            <th>Holiday ID</th>
+                            <th>Ort</th>
+                            <th>Land</th>
+                            <th>Preis</th>
+                            <th>Ab</th>
+                            <th>Bis</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Holiday selection will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <a href="priorities.html" class="btn2"><span>NEXT</span></a>
+        </div>
     </div>
     <footer class="footer">
-        WI &copy; 2023 HS AALEN  
+        WI &copy; 2023 HS AALEN
         <a href="contact.html" class="ko">Contact</a>
     </footer>
 </body>
-</html>
