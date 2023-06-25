@@ -21,20 +21,24 @@ import project.family.holidaywish.HolidayWish;
 
 @Entity
 public class FamilyMember {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
+
+	//Variablen deklarien 
+	//die Variable id mit Datentyp Long, firstname mit Datentyp String, secondName mit Datentyp String, bDay mit Datentyp Date
+	
+	@Id //Primärschlüssel in der Datenbank
+	@GeneratedValue(strategy = GenerationType.AUTO)	// ID wird automtisch vergeben
 	private long id; 
 	private String firstName;
 	private String secondName; 
 	private Date bDay;
 	
-	@OneToMany(mappedBy="familyMember")
+	@OneToMany(mappedBy="familyMember")// Eins zu viele Beziehung zu Prioritäten
 	@JsonIgnore
 	private List<Prio> priorities;
 	
 	
 
-
+	//Konstrukor defoult und ein Konstruktor mit parametern um die attribute zu setzen beim erstellen eines Objektes
 	public FamilyMember() {
 		// TODO Auto-generated constructor stub
 	}
@@ -47,6 +51,8 @@ public class FamilyMember {
 	this.bDay = bDay;
 		
 	}
+
+	//getter und setter methoden 
 
 	//@return the id
 	public long getId() {
