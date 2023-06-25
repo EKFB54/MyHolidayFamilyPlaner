@@ -121,29 +121,33 @@ $(document).ready(function() {
   });
 
   function loadDataTable() {
-    $.ajax({
-      url: 'http://localhost:8080/holiday',
-      type: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        var table = $('#holidaySelectionList').DataTable();
-        table.clear().draw();
-        data.forEach(function(holiday) {
-          table.row.add([
-            holiday.urlaubID,
-            holiday.ort,
-            holiday.land,
-            holiday.preis,
-            holiday.ab,
-            holiday.bis,
-            '<button class="delete-button" data-urlaubID="' + holiday.urlaubID + '">Delete</button>',
-            '<button class="select-button" data-urlaubID="' + holiday.urlaubID + '">Select</button>'
-          ]).draw();
-        });
+    var table = $('#holidaySelectionList').DataTable({
+      destroy: true,
+      ajax: {
+        url: 'http://localhost:8080/holiday',
+        type: 'GET',
+        dataType: 'json',
+        dataSrc: ''
       },
-      error: function(jqXhr, textStatus, errorThrown) {
-        console.log(errorThrown);
-      }
+      columns: [
+        { data: 'urlaubID' },
+        { data: 'ort' },
+        { data: 'land' },
+        { data: 'preis' },
+        { data: 'ab' },
+        { data: 'bis' },
+        {
+          data: null,
+          render: function (data, type, row) {
+            return '<button class="delete-button" data-urlaubID="' + row.urlaubID + '"><img src="images/delete.png" alt="Delete"></button>' +
+              '<button class="select-button" data-urlaubID="' + row.urlaubID + '">Select</button>';
+          }
+        }
+      ],
+      lengthChange: false,
+      searching: false,
+      paging: false,
+      info: false
     });
   }
 

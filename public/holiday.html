@@ -4,7 +4,7 @@
 <head>
     <title>HolidayPlanner</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/family.css">
+    <link rel="stylesheet" href="./css/holiday.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -25,23 +25,31 @@
             </ul>
         </nav>
     </header>
-    <div class="family-section">
-        <div class="family-container">
+    <div class="holiday-section">
+        <div class="holiday-container">
             <div class="card">
-                <h1 class="family-title">Add Holiday</h1>
-                <form id="createHoliday" class="family-form">
+                <h1 class="holiday-title">Add Holiday</h1>
+                <form id="createHoliday" class="holiday-form">
+
                     <label for="urlaubID" class="form-label">Holiday ID:</label>
                     <input type="text" id="urlaubID" required class="form-input">
+
                     <label for="ort" class="form-label">Ort:</label>
                     <input type="text" id="ort" required class="form-input">
+
                     <label for="land" class="form-label">Land:</label>
                     <input type="text" id="land" required class="form-input">
+
                     <label for="preis" class="form-label">Preis:</label>
                     <input type="text" id="preis" required class="form-input">
+                    
                     <label for="ab" class="form-label">Ab:</label>
-                    <input type="text" id="ab" required class="form-input">
+                    <input type="date" id="ab" required class="form-input">
+                    
+                    
                     <label for="bis" class="form-label">Bis:</label>
-                    <input type="text" id="bis" required class="form-input">
+                   
+                	<input type="date" id="bis" required class="form-input">
                     <div class="button-container">
                         <button type="submit" class="add-button">Add</button>
                         <button type="button" id="updateButton" class="update-button">Update</button>
@@ -49,9 +57,9 @@
                 </form>
             </div>
         </div>
-        <div class="family-container">
+        <div class="holiday-container">
             <div class="card">
-                <h1 class="family-title">Holiday Selection</h1>
+                <h1 class="holiday-title">Holiday Selection</h1>
                 <table id="holidaySelectionList">
                     <thead>
                         <tr>
