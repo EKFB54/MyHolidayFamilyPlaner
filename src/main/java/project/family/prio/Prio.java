@@ -16,22 +16,24 @@ import project.family.familymember.FamilyMember;
 
 @Entity
 public class Prio {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//Variablen deklarieren mit verschiedenen Datentypen  
+	
+	@Id //Primärschlüssel in der Datenbank
+	@GeneratedValue(strategy = GenerationType.AUTO) // ID wird automtisch vergeben
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne //viele zu eine beziehung zu familienmitglied 
 	@JoinColumn(name = "familymember_id", referencedColumnName = "id")
 	private FamilyMember familyMember;
 	//private List<FamilyMember> familymember;
 
-	@ManyToOne
+	@ManyToOne //viele zu eine beziehung zu holidaywish
 	@JoinColumn(name = "holiday_wish_id", referencedColumnName = "id")
 	private HolidayWish holidayWish;
 
 	private int priority;
 
+	//Konstrukor default und ein Konstruktor mit parametern um die attribute zu setzen beim erstellen eines Objektes
 	public Prio() {
 
 	}
@@ -43,6 +45,8 @@ public class Prio {
 		this.holidayWish = holidayWish;
 		this.priority = priority;
 	}
+
+	//getter und setter methoden 
 
 	public Long getId() {
 		return id;
