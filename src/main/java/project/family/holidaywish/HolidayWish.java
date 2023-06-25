@@ -21,9 +21,10 @@ import project.family.holiday.Holiday;
 
 @Entity
 public class HolidayWish {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
+	//Variablen deklarien mit verschiedenen Datentypen 
+	
+	@Id //Primärschlüssel in der Datenbank
+	@GeneratedValue(strategy = GenerationType.AUTO)	// ID wird automtisch vergeben
 	private long id; 
 	private String ort;
 	private String land; 
@@ -32,15 +33,15 @@ public class HolidayWish {
 	private Date bis;
 	//private Holiday holiday; 
 	
-	@ManyToOne
+	@ManyToOne //viele zu eine beziehung zu holiday
 	@JoinColumn(name = "urlaub_ID", referencedColumnName = "urlaubID")
 	private Holiday holiday;
 	
-	@OneToMany(mappedBy = "holidayWish")
+	@OneToMany(mappedBy = "holidayWish") //eine zu viele beziehung zu prio
 	@JsonIgnore
 	private List<Prio> priorities;
 	
-	@ManyToOne
+	@ManyToOne //viele zu eine beziehung familienmitglied 
 	@JoinColumn(name = "familymember_id", referencedColumnName = "id")
 	private FamilyMember familyMember;
 
@@ -49,7 +50,7 @@ public class HolidayWish {
 
 
 
-
+	//Konstrukor default und ein Konstruktor mit parametern um die attribute zu setzen beim erstellen eines Objektes
 	public HolidayWish() {
 		// TODO Auto-generated constructor stub
 	}
@@ -66,6 +67,8 @@ public class HolidayWish {
 		this.bis = bis;
 		//this.holiday=holiday;
 	}
+	//getter und setter methoden 
+	
 	public List<Prio> getPriorities() {
 		return priorities;
 	}
