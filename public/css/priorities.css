@@ -16,6 +16,7 @@ body {
 }
 
 .card {
+  
     width: 300px;
     height: 300px;
     background-color: #02010183;
@@ -34,12 +35,17 @@ h2 {
     margin-bottom: px;
 }
 
-
+#familyCardDropdown {
+  width: 300px; 
+}
+#holidayCardDropdown {
+  width: 300px; 
+}
 
 button {
         padding: 12.5px 30px;
         border: 0;
-        border-radius: 100px;
+        border-radius: 10px;
         background-color: #2ba8fb;
         color: #ffffff;
         font-weight: Bold;
@@ -79,22 +85,22 @@ button:active {
 
 .input:focus, input:valid {
   outline: none;
-  box-shadow: 1px 2px 5px rgba(133, 133, 133, 0.523);
-  background-image: linear-gradient(to top, rgba(182, 182, 182, 0.199), rgba(252, 252, 252, 0));
+  box-shadow: 1px 2px 5px rgba(238, 230, 230, 0.523);
+  background-image: linear-gradient(to top, rgba(240, 229, 229, 0.199), rgba(252, 252, 252, 0));
   transition: background 4s ease-in-out;
 }
 
 .input:focus ~ label, input:valid ~ label {
   transform: translateY(-95%) scale(0.9);
   padding: 0 .2em;
-  color: #f1ecec2c;
+  color: #f1e3e3;
   left: 80px;
 }
 
 .input:hover {
-  border: solid 1.9px #000002;
+  border: solid 1.9px #e6e6f0;
   transform: scale(1.03);
-  box-shadow: 1px 1px 5px rgba(133, 133, 133, 0.523);
+  box-shadow: 1px 1px 5px rgba(240, 235, 235, 0.523);
   transition: border-color 1s ease-in-out;
 }
     
@@ -102,7 +108,8 @@ button:active {
     width: 95%; 
     height: 130px; 
     border-radius: 10px; 
-    background-color: #e0dada; 
+    background-color: #faf7f7; 
+    color: #faf7f7;
 }
 
 .priority-value {
@@ -110,7 +117,7 @@ button:active {
     height: px;
     font-weight: bold;
     z-index: 2;
-    color: #fff;
+    color: #f0ece8;
 }
 
 
