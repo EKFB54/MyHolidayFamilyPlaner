@@ -1,7 +1,7 @@
 /* ====================================================================================================================
  * Body Styles
  * ====================================================================================================================*/
- body {
+body {
     background-color: #e2d2bc;
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -13,7 +13,7 @@
  * ====================================================================================================================*/
 .header {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     width: 100%;
     background-color: transparent;
@@ -25,13 +25,13 @@
  * ====================================================================================================================*/
 .logo-container {
     position: fixed;
-    top: -60px;
-    left: 150px;
-    z-index: 3;
+    top: -45px;
+    left: 50px;
+    z-index: 6;
 }
 
 .logo {
-    width: 350px;
+    width: 250px;
     height: auto;
 }
 
@@ -48,6 +48,7 @@
 .nav-item {
     display: inline-block;
     margin: 0 50px;
+    z-index: 5;
 }
 
 .nav-item a {
@@ -57,6 +58,7 @@
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     position: relative;
+    z-index: 5;
 }
 
 .nav-item a::before {
@@ -76,21 +78,20 @@
 
 .nav-item a:hover::before,
 .nav-item.active a::before {
-    opacity: 1;
+    opacity: 4;
 }
 
 .navigation {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 20px;
+    top: 30px;
+    left: 5px;
+    padding: -15px;
     text-align: center;
-    z-index: 1;
+    z-index: 4;
     width: 100%;
-    max-width: 1600px;
-    border-radius: 100px;
+    max-width: 1660px;
+    border-radius: 10%;
 }
 
 .nav-item.active a {
@@ -101,15 +102,15 @@
 /* ====================================================================================================================
  * Welcome Image Styles
  * ====================================================================================================================*/
- .welcome-image {
+.welcome-image {
     position: relative;
     text-align: center;
     width: 100%;
     height: 100vh;
     margin-top: -50px;
-  }
-  
-  .welcome-image::before {
+}
+
+.welcome-image::before {
     content: "";
     background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -117,15 +118,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-  }
-  
-  .background {
+}
+
+.background {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  
+}
 
 /* ====================================================================================================================
  * Title Styles
@@ -136,7 +135,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2;
+    z-index: 1;
 }
 
 .title {
@@ -151,17 +150,22 @@
  * ====================================================================================================================*/
 .btn {
     padding: 25px 45px;
+    text-decoration: none;
     font-size: 35px;
-    background-color: rgba(92, 153, 175, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #ffffff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
 .btn:hover {
-    background-color: #0099cc;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
 /* ====================================================================================================================
@@ -174,17 +178,17 @@
 /* ====================================================================================================================
  * White Section Styles
  * ====================================================================================================================*/
- .white-section {
+.white-section {
     background-color: rgba(0, 0, 0, 0.6);
     background-image: url("../images/transparent.png");
-    background-blend-mode: multiply; 
+    background-blend-mode: multiply;
     padding: 30px;
-  }
+}
 
 /* ====================================================================================================================
  * Footer Styles
  * ====================================================================================================================*/
- .footer {
+.footer {
     text-align: center;
     color: #000000;
     position: fixed;
@@ -198,13 +202,17 @@
     flex-direction: column;
     align-items: center;
     font-weight: bold;
+    z-index: 3;
 }
 
 .footer .year {
     margin-bottom: 5px;
 }
 
-/* Stile für den Kontakt-Link */
+/* ====================================================================================================================
+ * Kontakt Styles
+ * ====================================================================================================================*/
+
 .ko {
     color: #000000;
     text-decoration: none;
