@@ -142,7 +142,7 @@
                 rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
     border-radius: 30px;
     padding: 55px;
-    margin: 80px auto; /* Geändert: Margin auf auto gesetzt */
+    margin: 80px auto; 
     transition: all 0.5s ease;
 }
 
@@ -150,10 +150,7 @@
     transform: scale(1.05);
 }
 
-
-    /* ====================================================================================================================
-Add Button Styles
-====================================================================================================================*/
+ /* Add Button Styles*/
 .add-button,
 .select-button,
 .update-button {
