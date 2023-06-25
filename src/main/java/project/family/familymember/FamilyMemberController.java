@@ -25,7 +25,7 @@ public class FamilyMemberController {
 	}
 	
 	@RequestMapping("/familymember/{id}")
-	public FamilyMember getFamilyMember(Long id) {
+	public FamilyMember getFamilyMember(@PathVariable Long id) {
 		return familyMemberService.getFamilyMember(id);
 	}
 	@RequestMapping(method = RequestMethod.POST, value = "/familymember")
