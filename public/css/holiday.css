@@ -1,10 +1,10 @@
 /* Holidays Section */
 .holidays-section {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(250, 244, 244, 0)), url(../images/beach.png);
-    background-position: 0px;
-    background-repeat: 0px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.281), rgba(250, 244, 244, 0)), url(../images/family.png); 
+    background-position: center;
+    background-repeat: 10px;
     background-size: 1;
-    padding: 111px;
+    padding: 110px;
     background-color: #fff; 
 }
 
@@ -19,24 +19,45 @@
 .form-input {
     width: 95%;
     padding: 10px;
+    color: #f1eded;
     font-size: 18px;
-    border: 1px solid #000000;
+    border: 1px solid #f1eded;
+    background: none;
     border-radius: 200px;
     margin-bottom: 12px;
+
 }
 
 /* Add Button */
-.add-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #5c99af;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.add-button,
+.select-button,
+.update-button {
+padding: 15.5px 30px;
+border-radius: 100px;
+background-color: #2ba8fb;
+color: #ffffff;
+font-weight: bold;
+transition: all 0.5s;
+-webkit-transition: all 0.5s;
 }
 
+.add-button:hover,
+.select-button:hover,
+.update-button:hover {
+background-color: #6fc5ff;
+box-shadow: 0 0 20px #6fc5ff50;
+transform: scale(1.1);
+}
+
+.add-button:active,
+.select-button:active,
+.update-button:active {
+background-color: #3d94cf;
+transition: all 0.25s;
+-webkit-transition: all 0.25s;
+box-shadow: none;
+transform: scale(0.98);
+}
 .add-button:hover {
     background-color: #0099cc;
 }
@@ -59,35 +80,36 @@
     transform: scale(1.05);
 }
 
+
 /* Add Button Styles */
 .add-button,
 .select-button,
 .update-button {
-    padding: 15.5px 30px;
-    border-radius: 100px;
-    background-color: #2ba8fb;
-    color: #ffffff;
-    font-weight: bold;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
+padding: 15.5px 30px;
+border-radius: 100px;
+background-color: #2ba8fb;
+color: #ffffff;
+font-weight: bold;
+transition: all 0.5s;
+-webkit-transition: all 0.5s;
 }
 
 .add-button:hover,
 .select-button:hover,
 .update-button:hover {
-    background-color: #6fc5ff;
-    box-shadow: 0 0 20px #6fc5ff50;
-    transform: scale(1.1);
+background-color: #6fc5ff;
+box-shadow: 0 0 20px #6fc5ff50;
+transform: scale(1.1);
 }
 
 .add-button:active,
 .select-button:active,
 .update-button:active {
-    background-color: #3d94cf;
-    transition: all 0.25s;
-    -webkit-transition: all 0.25s;
-    box-shadow: none;
-    transform: scale(0.98);
+background-color: #3d94cf;
+transition: all 0.25s;
+-webkit-transition: all 0.25s;
+box-shadow: none;
+transform: scale(0.98);
 }
 
 .btn2 {
