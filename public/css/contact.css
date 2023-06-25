@@ -1,0 +1,76 @@
+/* ====================================================================================================================
+ * Background Style
+ * ====================================================================================================================*/
+
+body {
+  background-image: url("../images/kontakthintergrund.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+/* ====================================================================================================================
+ * Card Style
+ * ====================================================================================================================*/
+
+.article-basic {
+  margin-top: 200px;
+}
+
+.site-container {
+  display: flex;
+  justify-content: center;
+}
+
+.article-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.article-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 40px;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-card:first-child {
+  width: 215px; 
+}
+
+.article-image {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  border-radius: 10%;
+}
+
+.article-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-content h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
