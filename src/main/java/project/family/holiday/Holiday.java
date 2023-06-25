@@ -16,8 +16,11 @@ import project.family.familymember.*;
 
 @Entity
 public class Holiday {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
+	//Variablen deklarien 
+	//die Variable urlaubID mit Datentyp Long, ort mit Datentyp String, land mit Datentyp String, preis mit Datentyp double, ab mit Datentype date, bis mit Datentype Date
+	
+	@Id //Primärschlüssel in der Datenbank
+	@GeneratedValue(strategy = GenerationType.AUTO)	// ID wird automtisch vergeben
 	private long urlaubID; 
 	private String ort;
 	private String land; 
@@ -25,10 +28,10 @@ public class Holiday {
 	private Date ab; 
 	private Date bis;
 	
-	@OneToMany(mappedBy = "holiday")
+	@OneToMany(mappedBy = "holiday") // Eins zu viele Beziehung zu holidaywish
 	public List<HolidayWish> wishes;
 	
-	
+	//Konstrukor default und ein Konstruktor mit parametern um die attribute zu setzen beim erstellen eines Objektes
 	public Holiday() {
 	}
 	
@@ -43,7 +46,7 @@ public class Holiday {
 		
 	}
 	
-
+	//getter und setter methoden 
 	 // @return the urlaubID
 	public long getUrlaubID() {
 		return urlaubID;
