@@ -6,16 +6,15 @@ function updatePriorityValue(value) {
 }
 
 function savePrio() {
-    var member = parseInt($("#familyCardDropdown").get(0).value);
-    var holiday = parseInt($("#holidayCardDropdown").get(0).value);
+    var member = Number($("#familyCardDropdown").get(0).value);
+    var holiday = Number($("#holidayCardDropdown").get(0).value);
     prio = parseInt(prio);
 
     var prioData = {
         familyMember: member,
-        holidayWish: holiday,
+        holiday: holiday,
         priority: prio
     };
-
 
     $.ajax({
         url: 'http://localhost:8080/prio',
@@ -23,7 +22,7 @@ function savePrio() {
         data: JSON.stringify(prioData),
         contentType: 'application/json',
         success: function() {
-            
+            // top 5 refresh
         },
         error: function(jqXhr, textStatus, errorThrown) {
             console.log(errorThrown);
@@ -63,7 +62,7 @@ $(document).ready(function() {
     }
 
     function createDropdownHoliday(data) {
-        var dropDown = $('#holidayCardDropdown'); 
+        var dropDown = $('#holidayCardDropdown');
         for(var i = 0; i < data.length; i++) {
             var urlaub = data[i];
             dropDown.append(`<option value="${urlaub.urlaubID}">${urlaub.land} - ${urlaub.ort}</option>`);
