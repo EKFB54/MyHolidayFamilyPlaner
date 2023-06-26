@@ -1,13 +1,21 @@
 /* Holidays Section */
 .holiday-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.281), rgba(250, 244, 244, 0)), url(../images/family.png); 
+    justify-content: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.281), rgba(250, 244, 244, 0)), url(../images/family.png);
     background-position: center;
     background-repeat: 10px;
     background-size: 1;
     padding: 110px;
-    background-color: #fff; 
+    background-color: #fff;
+}
+
+.holiday-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 /* Form Label */
@@ -21,160 +29,237 @@
 .form-input {
     width: 95%;
     padding: 10px;
-    color: #f1eded;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     border: 1px solid #f1eded;
     background: none;
     border-radius: 200px;
     margin-bottom: 12px;
-
 }
 
 /* Add Button */
 .add-button,
 .select-button,
-.update-button {
-padding: 15.5px 30px;
-border-radius: 100px;
-background-color: #2ba8fb;
-color: #ffffff;
-font-weight: bold;
-transition: all 0.5s;
--webkit-transition: all 0.5s;
+.update-button,
+.delete-button {
+    padding: 15.5px 30px;
+    border-radius: 100px;
+    background-color: #2ba8fb;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 .add-button:hover,
 .select-button:hover,
-.update-button:hover {
-background-color: #6fc5ff;
-box-shadow: 0 0 20px #6fc5ff50;
-transform: scale(1.1);
+.update-button:hover,
+.delete-button:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
 }
 
 .add-button:active,
 .select-button:active,
-.update-button:active {
-background-color: #3d94cf;
-transition: all 0.25s;
--webkit-transition: all 0.25s;
-box-shadow: none;
-transform: scale(0.98);
+.update-button:active,
+.delete-button:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
 }
+
 .add-button:hover {
     background-color: #0099cc;
 }
 
 .card {
-
     position: relative;
     width: 600px;
     height: 560px;
     color: #fff;
     background-color: rgba(2, 1, 1, 0.4);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 50px -12px inset,
-                rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
     border-radius: 30px;
     padding: 55px;
-    margin: 80px;
+    margin: 20px;
     transition: all 0.5s ease;
 }
 
 .card:hover {
-
     transform: scale(1.05);
 }
 
-
-/* Add Button Styles */
-.add-button,
-.select-button,
-.update-button {
-padding: 15.5px 30px;
-border-radius: 100px;
-background-color: #2ba8fb;
-color: #ffffff;
-font-weight: bold;
-transition: all 0.5s;
--webkit-transition: all 0.5s;
-}
-/* ====================================================================================================================
-Delete Button Styles
-====================================================================================================================*/
+/* Delete Button Styles */
 .delete-button {
-background: none;
-border: none;
-cursor: pointer;
-border-radius: 30%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 30%;
 }
 
 .delete-button:hover {
-background-color: black;
-box-shadow: 0 0 10px black;
-transform: scale(1.05);
+    background-color: black;
+    box-shadow: 0 0 10px black;
+    transform: scale(1.05);
 }
 
 .delete-button:active {
-background-color: black(255, 255, 255);
-transition: all 0.25s;
--webkit-transition: all 0.25s;
-box-shadow: none;
-transform: scale(0.98);
+    background-color: black(255, 255, 255);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
 }
 
 .delete-button img {
-width: 20px;
-height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
-/* ====================================================================================================================
-Holiday Selection  List Table Styles
-====================================================================================================================*/
+/* Holiday Selection List Table Styles */
 #holidaySelectionList {
-margin: 0 auto;
-color: #fff;
-width: 70%;
-text-align: center;
-border-collapse: separate;
-border-spacing: 0;
-border: 1px solid #ddd;
-background-color: rgba(2, 1, 1, 0.1)
+    margin: 0 auto;
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    background-color: rgba(2, 1, 1, 0.1);
 }
 
 #holidaySelectionList th {
-border: 1px solid #ddd;
-padding: 8px;
-background-color: rgba(255, 255, 255, 0.1);
-color: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
 }
 
 #holidaySelectionList td {
-border: 1px solid #ddd;
-padding: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
 #holidaySelectionList tr {
-background-color: rgba(2, 1, 1, 0.1); 
+    background-color: rgba(2, 1, 1, 0.1);
 }
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-buttons .select-button {
+  margin-top: 10px;
+}
+
+/* Holiday Wishlist Table Styles */
+#holidayWishlist {
+    margin: 0 auto;
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    background-color: rgba(2, 1, 1, 0.1);
+}
+
+#holidayWishlist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+}
+
+#holidayWishlist td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#holidayWishlist tr {
+    background-color: rgba(2, 1, 1, 0.1);
+}
+
+#holidayWishlist .delete-wish-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 30%;
+}
+
+#holidayWishlist .delete-wish-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.select-wish-button {
+  padding: 15.5px 30px;
+  border-radius: 100px;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.select-wish-button:hover {
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.select-wish-button:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+
+
 .btn2 {
-position: absolute;
-right: 20px;
-top: 50%;
-transform: translateY(-50%);
-padding: 15px 25px;
-text-decoration: none;
-font-size: 25px; 
-background-color: rgba(0, 0, 0, 0.4);
-color: #ffffff;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn2:hover {
-background-color: rgba(0, 0, 0, 0.8);
-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+td:last-child {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+@media screen and (max-width: 600px) {
+    .holiday-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .card {
+        width: 100%;
+        margin: 10px;
+    }
+}
