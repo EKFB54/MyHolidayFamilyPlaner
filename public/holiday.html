@@ -30,29 +30,36 @@
             <div class="card">
                 <h1 class="holiday-title">Add Holiday</h1>
                 <form id="createHoliday" class="holiday-form">
-
                     <label for="urlaubID" class="form-label">Holiday ID:</label>
                     <input type="text" id="urlaubID" required class="form-input">
-
                     <label for="ort" class="form-label">Location:</label>
                     <input type="text" id="ort" required class="form-input">
-
                     <label for="land" class="form-label">Country:</label>
                     <input type="text" id="land" required class="form-input">
-
                     <label for="preis" class="form-label">Price:</label>
                     <input type="text" id="preis" required class="form-input">
-                    
                     <label for="ab" class="form-label">From:</label>
                     <input type="date" id="ab" required class="form-input">
-                    
-                    
                     <label for="bis" class="form-label">To:</label>
-                   
-                	<input type="date" id="bis" required class="form-input">
+                    <input type="date" id="bis" required class="form-input">
                     <div class="button-container">
                         <button type="submit" class="add-button">Add</button>
                         <button type="button" id="updateButton" class="update-button">Update</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <h1 class="holiday-title">Add Holiday Wish</h1>
+                <form id="addHolidayWish" class="holiday-form">
+                    <label for="urlaubID_wish" class="form-label">Holiday ID:</label>
+                    <input type="text" id="urlaubID_wish" required class="form-input">
+                    <label for="id" class="form-label">ID:</label>
+                    <input type="text" id="id" required class="form-input">
+                    <label for="ort_wish" class="form-label">Ort:</label>
+                    <input type="text" id="ort_wish" required class="form-input">
+                    <div class="button-container">
+                        <button type="submit" class="add-button">Add</button>
+                        <button type="button" id="updateWishButton" class="update-button">Update</button>
                     </div>
                 </form>
             </div>
@@ -77,11 +84,29 @@
                     </tbody>
                 </table>
             </div>
-            <a href="priorities.html" class="btn2"><span>NEXT</span></a>
-        </div>
+            <div class="card">
+                <h1 class="holiday-title">Holiday Wishlist</h1>
+                <table id="holidayWishlist">
+                    <thead>
+                        <tr>
+                            <th>Holiday ID</th>
+                            <th>ID</th>
+                            <th>Ort</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Holiday wishlist will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+                   
+        <a href="priorities.html" class="btn2"><span>NEXT</span></a>
     </div>
     <footer class="footer">
         WI &copy; 2023 HS AALEN
         <a href="contact.html" class="ko">Contact</a>
     </footer>
 </body>
+
+</html>
