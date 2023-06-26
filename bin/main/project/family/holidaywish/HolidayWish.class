@@ -30,6 +30,7 @@ public class HolidayWish {
 	//private Holiday holiday; 
 	
 	@ManyToOne //viele zu eine beziehung zu holiday
+	@JsonIgnore
 	@JoinColumn(name = "urlaub_ID", referencedColumnName = "urlaubID")
 	private Holiday holiday;
 	
