@@ -24,16 +24,13 @@ public class HolidayWish {
 	//Variablen deklarien mit verschiedenen Datentypen 
 	
 	@Id //Primärschlüssel in der Datenbank
-	@GeneratedValue(strategy = GenerationType.AUTO)	// ID wird automtisch vergeben
 	private long id; 
-	private String ort;
-	private String land; 
-	private double preis;
-	private Date ab; 
-	private Date bis;
+	private String description;
+
 	//private Holiday holiday; 
 	
 	@ManyToOne //viele zu eine beziehung zu holiday
+	@JsonIgnore
 	@JoinColumn(name = "urlaub_ID", referencedColumnName = "urlaubID")
 	private Holiday holiday;
 	
@@ -41,9 +38,6 @@ public class HolidayWish {
 	@JsonIgnore
 	private List<Prio> priorities;
 	
-	@ManyToOne //viele zu eine beziehung familienmitglied 
-	@JoinColumn(name = "familymember_id", referencedColumnName = "id")
-	private FamilyMember familyMember;
 
 	@Transient
 	private int sumPriority;
@@ -56,16 +50,11 @@ public class HolidayWish {
 	}
 
 
-	public HolidayWish(long id, String ort, String land, double preis, Date ab, Date bis, 
-			Holiday holiday) {
+	public HolidayWish(long id, String description, Holiday holiday) {
 		super();
 		this.id = id;
-		this.ort = ort;
-		this.land = land;
-		this.preis = preis;
-		this.ab = ab;
-		this.bis = bis;
-		//this.holiday=holiday;
+		this.description = description;
+		this.holiday=holiday;
 	}
 	//getter und setter methoden 
 	
@@ -112,84 +101,19 @@ public class HolidayWish {
 
 
 	/**
-	 * @return the ort
+	 * @return the description
 	 */
-	public String getOrt() {
-		return ort;
+	public String getDescription() {
+		return description;
 	}
 
 
 	/**
-	 * @param ort the ort to set
+	 * @param ort the description to set
 	 */
-	public void setOrt(String ort) {
-		this.ort = ort;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-
-	/**
-	 * @return the land
-	 */
-	public String getLand() {
-		return land;
-	}
-
-
-	/**
-	 * @param land the land to set
-	 */
-	public void setLand(String land) {
-		this.land = land;
-	}
-
-
-	/**
-	 * @return the preis
-	 */
-	public double getPreis() {
-		return preis;
-	}
-
-
-	/**
-	 * @param preis the preis to set
-	 */
-	public void setPreis(double preis) {
-		this.preis = preis;
-	}
-
-
-	/**
-	 * @return the ab
-	 */
-	public Date getAb() {
-		return ab;
-	}
-
-
-	/**
-	 * @param ab the ab to set
-	 */
-	public void setAb(Date ab) {
-		this.ab = ab;
-	}
-
-
-	/**
-	 * @return the bis
-	 */
-	public Date getBis() {
-		return bis;
-	}
-
-
-	/**
-	 * @param bis the bis to set
-	 */
-	public void setBis(Date bis) {
-		this.bis = bis;
-	}
-	
 	
 
 }
