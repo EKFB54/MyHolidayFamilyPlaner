@@ -1,4 +1,9 @@
-$(document).ready(function() {
+/* ====================================================================================================================
+ * create holiday
+ * ====================================================================================================================*/
+
+
+$(document).ready(function() {	 
   var selectedHolidayId = null;
   var selectedHolidayWishId = null;
 
@@ -19,6 +24,11 @@ $(document).ready(function() {
       ab: ab,
       bis: bis
     };
+
+
+/* ====================================================================================================================
+ * if select holiday
+ * ====================================================================================================================*/
 
     if (selectedHolidayId) {
       $.ajax({
@@ -53,6 +63,10 @@ $(document).ready(function() {
       });
     }
   });
+  
+/* ====================================================================================================================
+ * delete holiday
+ * ====================================================================================================================*/
 
   $(document).on('click', '.delete-button', function() {
     var urlaubID = $(this).attr('data-urlaubID');
@@ -69,6 +83,11 @@ $(document).ready(function() {
       }
     });
   });
+  
+  /* ====================================================================================================================
+ * select/update holiday
+ * ====================================================================================================================*/
+
 
   $(document).on('click', '.select-button', function() {
     selectedHolidayId = $(this).attr('data-urlaubID');
@@ -120,17 +139,32 @@ $(document).ready(function() {
       }
     });
   });
+  
+ 
+  
 
-  $("#addHolidayWish").submit(function(event) {
+/* ====================================================================================================================
+ * 
+ * create holidaywish
+ * 
+ * 
+ * ====================================================================================================================*/
+
+
+
+  $('#addHolidayWish').submit(function(event) {
     event.preventDefault();
+
     var urlaubID = $('#urlaubID_wish').val();
     var id = $('#id').val();
-    var ort = $('#ort_wish').val();
+    var description = $('#description').val();
 
     var holidayWish = {
-      urlaub_id: urlaubID,
       id: id,
-      ort: ort
+      description: description,
+      holiday: {
+        urlaubID: urlaubID
+      }
     };
 
     $.ajax({
@@ -142,12 +176,67 @@ $(document).ready(function() {
         console.log('Successfully added holiday wish');
         loadHolidayWishlist();
         resetHolidayWishForm();
+        selectedHolidayWishId = null;
+      },
+      error: function(jqXhr, textStatus, errorThrown) {
+        console.log('Error:', errorThrown);
+        console.log('Error Details:', jqXhr);
+      }
+    });
+  });
+
+  
+  /* ====================================================================================================================
+ * select/update holidaywish
+ * ====================================================================================================================*/
+
+
+ $(document).on('click', '.select-wish-button', function() {
+    selectedHolidayWishId = $(this).attr('data-holidayWishId');
+    var urlaubID = $(this).closest('tr').find('td:eq(0)').text();
+    var id = $(this).closest('tr').find('td:eq(1)').text();
+    var description = $(this).closest('tr').find('td:eq(2)').text();
+
+    $('#urlaubID_wish').val(urlaubID);
+    $('#id').val(id);
+    $('#description').val(description);
+  });
+
+  $('#updateWishButton').click(function(event) {
+    event.preventDefault();
+    var urlaubID = $('#urlaubID_wish').val();
+    var id = $('#id').val();
+    var description = $('#description').val();
+
+    var holidayWish = {
+      id: id,
+      description: description,
+      holiday: {
+        urlaubID: urlaubID
+      }
+    };
+
+    $.ajax({
+      url: 'http://localhost:8080/holidaywish/' + selectedHolidayWishId,
+      type: 'PUT',
+      data: JSON.stringify(holidayWish),
+      contentType: 'application/json',
+      success: function(data, textStatus, jqXhr) {
+        console.log('Successfully updated holiday wish');
+        loadHolidayWishlist();
+        resetHolidayWishForm();
+        selectedHolidayWishId = null;
       },
       error: function(jqXhr, textStatus, errorThrown) {
         console.log(errorThrown);
       }
     });
   });
+
+/* ====================================================================================================================
+ * delete holidaywish
+ * ====================================================================================================================*/
+
 
   $(document).on('click', '.delete-wish-button', function() {
     var holidayWishId = $(this).attr('data-holidayWishId');
@@ -165,17 +254,9 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on('click', '.select-wish-button', function() {
-    selectedHolidayWishId = $(this).attr('data-holidayWishId');
-    var holidayId = $(this).closest('tr').find('td:eq(0)').text();
-    var id = $(this).closest('tr').find('td:eq(1)').text();
-    var ort = $(this).closest('tr').find('td:eq(2)').text();
-
-    // Set the values in the form
-    $('#urlaubID_wish').val(holidayId);
-    $('#id').val(id);
-    $('#ort_wish').val(ort);
-  });
+   /* ====================================================================================================================
+ * Load holiday list
+ * ====================================================================================================================*/
 
   function loadDataTable() {
     var table = $('#holidaySelectionList').DataTable({
@@ -219,6 +300,10 @@ $(document).ready(function() {
     $('#bis').val('');
   }
 
+    /* ====================================================================================================================
+ * Load holidaywish list
+ * ====================================================================================================================*/
+
   function loadHolidayWishlist() {
     var table = $('#holidayWishlist').DataTable({
       destroy: true,
@@ -231,13 +316,13 @@ $(document).ready(function() {
       columns: [
         { data: 'urlaub_id' },
         { data: 'id' },
-        { data: 'ort' },
+        { data: 'description' },
         {
           data: null,
           render: function (data, type, row) {
             return '<button class="delete-wish-button" data-holidayWishId="' + row.id + '"><img src="images/delete.png" alt="Delete"></button>' +
               '<button class="select-wish-button" data-holidayWishId="' + row.id + '">Select</button>';
-          },width: "150px"
+          }
         }
       ],
       lengthChange: false,
@@ -250,11 +335,14 @@ $(document).ready(function() {
   function resetHolidayWishForm() {
     $('#urlaubID_wish').val('');
     $('#id').val('');
-    $('#ort_wish').val('');
+    $('#description').val('');
   }
 
-  $(document).ready(function() {
+
     loadDataTable();
     loadHolidayWishlist();
-  });
-});
+    
+    });
+
+  
+  
